@@ -1,11 +1,12 @@
 from turtle import Turtle, Screen
 from random import randint
-
+from PIL import Image
+Image1 = Image.open("monee.png");
+Image1.show();
 
 wn = Screen()
 wn.bgcolor('blue')
 wn.screensize(2000)
-
 
 
 
@@ -34,9 +35,10 @@ meteor2.setpos(randint(-100,100),150)
 
 energy = Turtle()
 energy.speed(0)
-
+energy.penup()
 energy.setheading(-90)
 energy.setpos(randint(-100,100),150)
+energy.addshape('Image1')
 
 energy2 = Turtle()
 energy2.speed(0)
