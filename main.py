@@ -1,13 +1,14 @@
 from turtle import Turtle, Screen
 from random import randint
 
+
 wn = Screen()
 wn.bgcolor('blue')
 wn.screensize(2000)
 
-import brown
-import orange
-import red
+
+
+
 
 us = Turtle()
 us.speed(0)
@@ -33,8 +34,7 @@ meteor2.setpos(randint(-100,100),150)
 
 energy = Turtle()
 energy.speed(0)
-energy.color('green')
-energy.penup()
+
 energy.setheading(-90)
 energy.setpos(randint(-100,100),150)
 
