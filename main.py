@@ -1,22 +1,25 @@
 from turtle import Turtle, Screen
 from random import randint
-from PIL import Image
-Image1 = Image.open("monee.png");
-Image1.show();
+
 
 wn = Screen()
 wn.bgcolor('blue')
 wn.screensize(2000)
+wn.register_shape('monee.gif')
+wn.register_shape('metor.gif')
+wn.register_shape('ship.gif')
 
 
-
+import brown
+import red
+import orange
 
 us = Turtle()
 us.speed(0)
 us.penup()
 us.setheading(90)
 us.setpos(0,0)
-
+us.shape('ship.gif')
 
 meteor = Turtle()
 meteor.speed(0)
@@ -24,6 +27,7 @@ meteor.color('black')
 meteor.penup()
 meteor.setheading(-90)
 meteor.setpos(randint(-100,100),150)
+meteor.shape('metor.gif')
 
 meteor2 = Turtle()
 meteor2.speed(0)
@@ -31,14 +35,17 @@ meteor2.color('black')
 meteor2.penup()
 meteor2.setheading(-90)
 meteor2.setpos(randint(-100,100),150)
-
+meteor2.shape('metor.gif')
 
 energy = Turtle()
 energy.speed(0)
 energy.penup()
 energy.setheading(-90)
 energy.setpos(randint(-100,100),150)
-energy.addshape('Image1')
+energy.shape('monee.gif')
+
+
+
 
 energy2 = Turtle()
 energy2.speed(0)
@@ -46,6 +53,7 @@ energy2.color('green')
 energy2.penup()
 energy2.setheading(-90)
 energy2.setpos(randint(-100,100),150)
+energy2.shape('monee.gif')
 
 energy3 = Turtle()
 energy3.speed(0)
@@ -53,6 +61,7 @@ energy3.color('green')
 energy3.penup()
 energy3.setheading(-90)
 energy3.setpos(randint(-100,100),150)
+energy3.shape('monee.gif')
 
 energy4 = Turtle()
 energy4.speed(0)
@@ -60,9 +69,13 @@ energy4.color('green')
 energy4.penup()
 energy4.setheading(-90)
 energy4.setpos(randint(-100,100),150)
+energy4.shape('monee.gif')
 
 score = 0
 m_speed = 1
+
+
+
 
 
 going = True
@@ -70,9 +83,9 @@ while going == True:
 
   wn.onkey(lambda: us.left(90), 'Left')
   wn.onkey(lambda: us.right(90), 'Right')
-  wn.onkey(lambda: us.forward(10), 'Up')
+  wn.onkey(lambda: us.forward(10), 'Up') 
   wn.onkey(lambda: us.forward(-10), 'Down')
-
+    
   x_corr_good = us.xcor()
   if int(x_corr_good) <= -140: 
     print('You are out of bounds')
@@ -96,7 +109,8 @@ while going == True:
     us.setpos(0,0)
 
   meteor.setpos(meteor.xcor(), meteor.ycor() - m_speed)
-  meteor2.setpos(meteor2.xcor(), meteor2.ycor() - m_speed)
+  meteor2.setpos(meteor2.xcor(), meteor2.ycor() -    
+  m_speed)
   energy.setpos(energy.xcor(), energy.ycor() - 1)
   energy2.setpos(energy2.xcor(), energy2.ycor() - 1)
   energy3.setpos(energy3.xcor(), energy3.ycor() - 1)
